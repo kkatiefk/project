@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using project.Model;
+using System.Net.Http.Headers;
 
 namespace project.Clients
 {
@@ -102,6 +103,9 @@ namespace project.Clients
 
                 return result;
             }
+
+            
+           
         }
 
         public async Task<Result> GetRandomFilm()
@@ -132,5 +136,6 @@ namespace project.Clients
                 return randomFilm;
             }
         }
+
     }
 }

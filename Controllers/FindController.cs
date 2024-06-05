@@ -36,7 +36,7 @@ namespace project.Controllers
         }
 
         [HttpGet("find-by-date")]
-        public async Task<Find> GetFilmDetailsByDate([FromQuery] string titleReleaseText)
+        public async Task<Find> GetFilmDetailsByDate( string titleReleaseText)
         {
             DataBase db = new DataBase();
             FilmClients clients = new FilmClients();
@@ -53,7 +53,7 @@ namespace project.Controllers
         }
 
         [HttpGet("find-by-credits")]
-        public async Task<Find> GetFilmDetailsByCredits([FromQuery] string topCredit)
+        public async Task<Find> GetFilmDetailsByCredits( string topCredit)
         {
             DataBase db = new DataBase();
             FilmClients clients = new FilmClients();
@@ -86,7 +86,7 @@ namespace project.Controllers
         }
 
         [HttpPost("rate-film")]
-        public async Task<ActionResult> RateFilm([FromQuery] string filmId, [FromQuery] int score)
+        public async Task<ActionResult> RateFilm( string filmId, int score)
         {
             if (score < 1 || score > 10)
             {
@@ -100,7 +100,7 @@ namespace project.Controllers
         }
 
         [HttpGet("get-rating")]
-        public async Task<ActionResult> GetRating([FromQuery] string filmId)
+        public async Task<ActionResult> GetRating( string filmId)
         {
             var db = new DataBase();
             var score = await db.GetRatingAsync(filmId);
